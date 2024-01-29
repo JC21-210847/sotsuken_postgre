@@ -101,7 +101,7 @@
 <div class="container">
     <div class="jumbotron">
         <h1><i class="fas fa-search"></i> </h1>
-        <p>1988年～2020年までのデータ</p>
+        <h3>1988年～2020年までのデータ</h3>
     </div>
 
     <form action="./ConnectionTest" method="post" name="progNumber">
@@ -125,7 +125,8 @@
 	        
 	        <div id="custom_term1">
 	        	<h2>年度を指定して検索(制限15万件)</h2>
-	        	検索年月(例：1988年1月の場合　→　198801)<br>
+	        	データ範囲 1988年1月 ～ 2020年12月<br>
+	        	検索年月 (例：1988年1月の場合　→　198801)<br>
 	        	<input type="number" name="from" /> から
 	        	<input type="number" name="to" />まで
 	        </div>
@@ -137,6 +138,7 @@
 	        </div>
 	        <div id="custom_term4">
 	        	<h2>検索履歴</h2>
+	        	都合により使えません
 	        </div>
 	        <div id="custom_term5">
 	        	<h2>件数制限をかけて表示</h2>
