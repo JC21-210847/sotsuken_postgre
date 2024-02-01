@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>機能1結果</title>
+<title>機能4結果</title>
 </head>
 <body>
 	<a href="./index.jsp">機能選択に戻る</a>
