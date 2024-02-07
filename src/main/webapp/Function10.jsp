@@ -12,7 +12,6 @@
 <title>機能10結果</title>
 </head>
 <body>
-<a href="./index.jsp">機能選択に戻る</a>
 
 <h3>表示件数 <%=bean.getArea_Name_List().size() %>件</h3>
 	
