@@ -46,22 +46,6 @@
    			width: 350px; /* 任意のサイズに調整 */
     		height: auto; /* サイズ比率を維持 */
 		}
-		
-		
-		#b-image.rainbow {
-            animation: rainbowGlow 0.4s linear infinite;
-        }
-		#b-img-container {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            margin: 10px; /* 必要に応じて調整 */
-        }
-        #b-image {
-            width: 400px; /* 任意のサイズに調整 */
-            height: auto; /* サイズ比率を維持 */
-        }
-		
         
     </style>
 
@@ -79,39 +63,6 @@
 			document.getElementById('custom_term8').style.display="none";
 			document.getElementById('custom_term9').style.display="none";
 			document.getElementById('custom_term10').style.display="none";
-            
-
-            document.forms['progNumber'].addEventListener('submit', function(event) {
-                event.preventDefault(); // Prevent the form from submitting in the traditional way
-
-                // Show loading animation
-                document.getElementById('loading').style.display = "block";
-
-                // Perform AJAX request to your Servlet
-                var xhr = new XMLHttpRequest();
-                xhr.open(this.method, this.action, true);
-                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState === 4) {
-                        // Hide loading animation after processing
-                        document.getElementById('loading').style.display = "none";
-
-                        if (xhr.status === 200) {
-                            // Handle the response if needed
-                            // For example, you can update a div with the response content
-                            var responseContainer = document.getElementById('responseContainer');
-                            responseContainer.innerHTML = xhr.responseText;
-                            responseContainer.classList.add('scale-up'); // Add the scale-up class
-                        } else {
-                            // Handle errors if needed
-                            console.error('Error:', xhr.statusText);
-                        }
-                    }
-                };
-
-                xhr.send(new URLSearchParams(new FormData(this)).toString());
-            });
         });
 
         function changeTerm(){
@@ -184,6 +135,7 @@
 
 <header>
     <h1>code卍ninja</h1>
+    
 </header>
 
 <!-- Add the loading animation div -->
@@ -196,7 +148,7 @@
         <h1><i class="fas fa-search"></i> </h1>
         <h3>1988年～2020年までのデータ</h3>
         <!-- Add A.png and apply rainbow glow -->
-    	<img id="aImage" src="A.png" class="rainbow">
+    	<img id="aImage" src="B.png" class="rainbow">
     </div>
 
     <form action="./ConnectionTest" method="post" name="progNumber">
@@ -214,7 +166,7 @@
 					<option value="9">機能9</option>
 					<option value="10">機能10</option>
 		        </select>
-		</div>
+	        </div>
 	        
 	        <div id="custom_term1">
 	        	<h2>年度を指定して検索(制限15万件)</h2>
@@ -263,10 +215,6 @@
 
         <input type="submit" value="検索" class="smit">
     </form>
-    
-    <div id="b-img-container">
-        	<img id="b-image" src="B.png" alt="B" class="rainbow" />
-    	</div>
 
     <!-- Add a container to display the response from the servlet -->
     <div id="responseContainer"></div>
