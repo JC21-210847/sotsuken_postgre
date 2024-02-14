@@ -86,7 +86,7 @@ public class Bean implements Serializable{
 			+ "WHERE trade_date = CAST(? AS INTEGER) and country_code = CAST(? AS INTEGER) "
 			+ "ORDER BY transaction_price DESC;";
 	
-	final private String query8 = "select * from trade_data_test where 列名 != 'hs_code';";
+	final private String query8 = "select * from trade_data_test where 列名 != 'hs_code'";
 	
 	final private String query9Minus = "WITH sum_trs AS ("
 			+ "	SELECT trade_date, import_export_code, SUM(transaction_price) AS sum_price"

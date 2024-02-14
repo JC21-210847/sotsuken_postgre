@@ -39,7 +39,7 @@
 
         /* Apply the animation to A.png */
         #aImage.rainbow {
-            animation: rainbowGlow 0.5s linear infinite;
+            animation: rainbowGlow 0.7s linear infinite;
         }
         
         #aImage {
@@ -49,7 +49,7 @@
 		
 		
 		#b-image.rainbow {
-            animation: rainbowGlow 0.5s linear infinite;
+            animation: rainbowGlow 0.8s linear infinite;
         }
 		#b-img-container {
             position: fixed;
