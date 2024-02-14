@@ -94,7 +94,9 @@ public class ConnectionTest extends HttpServlet {
 				rs = stmt.executeQuery();
 				while(rs.next()) {
 					bean.addArea_Name_List(rs.getString("area_name"));
-					bean.addTransaction_price_List(rs.getString("sum"));
+					AmountFormatter formatter = new AmountFormatter((rs.getString("sum")));
+					String formattedAmount = formatter.formatAmount();
+					bean.addTransaction_price_List(formattedAmount);
 				}
 				break;
 			case "5":
@@ -184,7 +186,9 @@ public class ConnectionTest extends HttpServlet {
 				rs = stmt.executeQuery();
 				while(rs.next()) {
 					bean.addArea_Name_List(rs.getString("area_name"));
-					bean.addTransaction_price_List(rs.getString("取引金額"));
+					AmountFormatter formatter = new AmountFormatter((rs.getString("取引金額")));
+					String formattedAmount = formatter.formatAmount();
+					bean.addTransaction_price_List(formattedAmount);
 				}
 				break;
 			default:

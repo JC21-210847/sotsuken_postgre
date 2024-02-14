@@ -25,7 +25,7 @@
 		<% for(int i = 0; i < bean.getArea_Name_List().size(); i++){ %>
 	  		<tr>
 	  			<td><%=bean.getArea_Name_List().get(i)  %></td>
-	  			<td><%=bean.getTransaction_price_List().get(i)  %> 千円</td>
+	  			<td><%=bean.getTransaction_price_List().get(i)  %> 回</td>
 	  		</tr>
 	  	<% } %>
 
