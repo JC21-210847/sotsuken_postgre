@@ -21,6 +21,8 @@ public class Bean implements Serializable{
 	
 	private List<String> cases_List;
 	
+	private String time;
+	
 	public Bean() {
 		this.trade_date_List = new ArrayList<>();
 		this.import_export_code_List = new ArrayList<>();
@@ -36,6 +38,9 @@ public class Bean implements Serializable{
 		this.round_List = new ArrayList<>();
 		
 		this.cases_List = new ArrayList<>();
+		
+		this.time = "";
+		
 	}
 	
 	final private String query1 = "SELECT trade_date, transaction_price "
@@ -316,4 +321,11 @@ public class Bean implements Serializable{
 		this.cases_List.add(cases);
 	}
 
+	public String getTime() {
+		return time;
+	}
+	public void setTime(String time) {
+		this.time = time;
+	}
+	
 }

@@ -40,7 +40,10 @@ public class ConnectionTest extends HttpServlet {
 		String url = "jdbc:postgresql://"+dbServer+":" + dbPort + "/" +dbName;
 		response.setContentType("text/html;charset=UTF-8");
 		
+		double start = System.currentTimeMillis();
+		
 		try {
+			
 			System.out.println("接続");
 			Class.forName("org.postgresql.Driver");
 			Connection conn = DriverManager.getConnection(url, user, pass);
@@ -204,6 +207,16 @@ public class ConnectionTest extends HttpServlet {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
+		
+		double end = System.currentTimeMillis();
+		
+		double time = end - start;
+		
+		double timer = time / 1000.0;
+		
+		String strStart = String.valueOf(timer);
+		
+		bean.setTime(strStart);
 		
 		request.setAttribute("bean", bean);
 		request.getRequestDispatcher(func).forward(request, response);
