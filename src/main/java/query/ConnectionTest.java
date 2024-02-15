@@ -89,7 +89,6 @@ public class ConnectionTest extends HttpServlet {
 				}
 				break;
 			case "4":
-				//検索履歴の機能
 				func = "/Function4.jsp";
 				query = bean.getQuery4();
 				stmt = conn.prepareStatement(query);

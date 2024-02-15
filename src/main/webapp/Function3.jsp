@@ -19,7 +19,7 @@
 	<table>	
 	<tbody>
 		<tr class = "under">
-			<td>国名</td>
+			<td>国コード</td>
 		</tr>
 
 		<% for(int i = 0; i < bean.getCountry_code_List().size(); i++){ %>
