@@ -28,7 +28,7 @@
 	  			
 	  			<td><%=bean.getcountry_Name_List().get(i)  %></td>
 	  			
-	  			<td><%=bean.getTransaction_price_List().get(i) %> 百万</td>
+	  			<td><%=bean.getTransaction_price_List().get(i) %> 千円</td>
 	  			
 	  			<td><%=bean.getHs_code_List().get(i) %></td>
 	  			
