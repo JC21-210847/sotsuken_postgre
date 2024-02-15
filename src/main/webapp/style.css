@@ -200,3 +200,7 @@ table th,table td{
 table tr:nth-child(odd){
   background-color: #eee
 }
+
+.smit{
+	margin-top: 15px;
+}

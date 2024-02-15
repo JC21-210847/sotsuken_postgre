@@ -14,6 +14,7 @@
 <body>
 
 <h3>表示件数 <%=bean.getcountry_Name_List().size() %>件</h3>
+<h4>データベース処理時間 <%=bean.getTime() %>秒</h4>
 	
 	<table>	
 	<tbody>
