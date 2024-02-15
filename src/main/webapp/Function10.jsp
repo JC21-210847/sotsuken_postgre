@@ -19,7 +19,7 @@
 	<tbody>
 		<tr class = "under">
 			<td>地域</td>
-			<td>取引金額</td>
+			<td>取引回数</td>
 		</tr>
 
 		<% for(int i = 0; i < bean.getArea_Name_List().size(); i++){ %>

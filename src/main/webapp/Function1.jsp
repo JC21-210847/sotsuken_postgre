@@ -28,7 +28,7 @@
 	  			<td><%=bean.getTrade_date_List().get(i)  %></td>
 	  			
 	  			
-	  			<td><%=bean.getTransaction_price_List().get(i) %> 百万</td>
+	  			<td><%=bean.getTransaction_price_List().get(i) %> 千円</td>
 	  			
 	  		</tr>
 	  	<% } %>
