@@ -10,7 +10,6 @@
 <title>機能8結果</title>
 </head>
 <body>
-<a href="./index.jsp">機能選択に戻る</a>
 
 <h3>表示件数 <%=bean.getTrade_date_List().size() %>件</h3>
 	

@@ -87,8 +87,17 @@ public class ConnectionTest extends HttpServlet {
 				break;
 			case "4":
 				//検索履歴の機能
-				func = "/index.jsp";
+				func = "/Function4.jsp";
+				query = bean.getQuery4();
+				stmt = conn.prepareStatement(query);
 				
+				rs = stmt.executeQuery();
+				while(rs.next()) {
+					bean.addArea_Name_List(rs.getString("area_name"));
+					AmountFormatter formatter = new AmountFormatter((rs.getString("sum")));
+					String formattedAmount = formatter.formatAmount();
+					bean.addTransaction_price_List(formattedAmount);
+				}
 				break;
 			case "5":
 				func = "/Function5.jsp";
@@ -177,7 +186,9 @@ public class ConnectionTest extends HttpServlet {
 				rs = stmt.executeQuery();
 				while(rs.next()) {
 					bean.addArea_Name_List(rs.getString("area_name"));
-					bean.addTransaction_price_List(rs.getString("取引金額"));
+					AmountFormatter formatter = new AmountFormatter((rs.getString("取引金額")));
+					String formattedAmount = formatter.formatAmount();
+					bean.addTransaction_price_List(formattedAmount);
 				}
 				break;
 			default:

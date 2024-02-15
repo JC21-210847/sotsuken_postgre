@@ -57,7 +57,10 @@ public class Bean implements Serializable{
 			+ " FROM CountryCounts"
 			+ " WHERE cnt = (SELECT MAX(cnt) FROM CountryCounts);";
 	
-	final private String query4 = "";
+	final private String query4 = "SELECT c.area_name, SUM(t_cnt.cnt) FROM "
+			+ "(SELECT country_code, SUM(transaction_price) AS cnt FROM trade_data_test GROUP BY country_code) AS t_cnt "
+			+ "INNER JOIN country c USING(country_code) "
+			+ "GROUP BY c.area_name;";
 	
 	final private String query5 = "SELECT trade_date, import_export_code, country_code, customs_code, hs_code, unit1, unit2, transaction_price "
 			+ "FROM trade_data_test ORDER BY transaction_price LIMIT 1000;";
@@ -83,7 +86,7 @@ public class Bean implements Serializable{
 			+ "WHERE trade_date = CAST(? AS INTEGER) and country_code = CAST(? AS INTEGER) "
 			+ "ORDER BY transaction_price DESC;";
 	
-	final private String query8 = "select * from trade_data_test where 列名 != 'hs_code';";
+	final private String query8 = "select * from trade_data_test where 列名 != 'hs_code'";
 	
 	final private String query9Minus = "WITH sum_trs AS ("
 			+ "	SELECT trade_date, import_export_code, SUM(transaction_price) AS sum_price"
